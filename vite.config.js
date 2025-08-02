@@ -3,7 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import path from 'path'
 
 export default defineConfig({
-    base: process.env.NODE_ENV === 'production' ? '/fc-brg_client/' : '/',
+    base: '/fc-brg_client/',
     plugins: [vue()],
     server: {
         port: 5173,
