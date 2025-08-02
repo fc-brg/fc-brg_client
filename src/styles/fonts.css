@@ -1,0 +1,80 @@
+/* 모든 @import를 맨 위로 이동 */
+
+/* Material Design Icons 폰트 로딩 - CDN 사용 */
+@import url('https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css');
+
+/* Google Fonts Material Icons */
+@import url('https://fonts.googleapis.com/css2?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css2?family=Material+Icons+Outlined');
+@import url('https://fonts.googleapis.com/css2?family=Material+Icons+Round');
+@import url('https://fonts.googleapis.com/css2?family=Material+Icons+Sharp');
+@import url('https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone');
+
+/* Pretendard 폰트 */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+
+/* Noto Sans KR 폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+/* Material Design Icons 폰트 직접 정의 (CDN 실패 시 대체) */
+@font-face {
+    font-family: 'Material Design Icons';
+    src: url('https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/fonts/materialdesignicons-webfont.woff2') format('woff2'), url('https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/fonts/materialdesignicons-webfont.woff') format('woff'), url('https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/fonts/materialdesignicons-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 폰트 설정 */
+:root {
+    --font-family-base: 'Pretendard', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-family-mdi: 'Material Design Icons';
+}
+
+body {
+    font-family: var(--font-family-base);
+}
+
+/* Material Design Icons 폰트 대체 설정 */
+.mdi {
+    font-family: var(--font-family-mdi);
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+}
+
+/* Vuetify 아이콘 설정 강화 */
+.v-icon {
+    font-family: var(--font-family-mdi) !important;
+}
+
+/* 폰트 로딩 실패 시 대체 스타일 */
+.mdi::before {
+    content: attr(data-icon);
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+}
