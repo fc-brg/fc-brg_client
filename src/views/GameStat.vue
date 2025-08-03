@@ -268,7 +268,7 @@ const api = axios.create({
   baseURL: window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ?
     'http://localhost:3000' :
     window.location.hostname === 'fc-brg.github.io' ?
-    'https://fc-brg-server.onrender.com' : // Render 서버 URL
+    'https://cors-anywhere.herokuapp.com/http://localhost:3000' : // CORS 프록시 사용
     window.location.origin,
   headers: {
     'Content-Type': 'application/json',
