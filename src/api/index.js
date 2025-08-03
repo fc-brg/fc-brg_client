@@ -5,7 +5,7 @@ const api = axios.create({
         (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ?
         'http://localhost:3000' :
         window.location.hostname === 'fc-brg.github.io' ?
-        'https://cors-anywhere.herokuapp.com/http://localhost:3000' : // CORS 프록시 사용
+        'http://175.236.207.185:3000' : // Mac Mini 서버 IP
         `https://${window.location.hostname}`),
     headers: {
         'Content-Type': 'application/json'
