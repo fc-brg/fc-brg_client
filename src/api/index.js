@@ -1,11 +1,12 @@
 import axios from 'axios'
 
 const api = axios.create({
-    baseURL: window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ?
+        baseURL: import.meta.env.VITE_API_URL ||
+        (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ?
         'http://localhost:3000' :
         window.location.hostname === 'fc-brg.github.io' ?
-        'https://fc-brg-server.onrender.com' : // Render 서버 URL
-        `https://${window.location.hostname}`,
+        'https://cors-anywhere.herokuapp.com/http://localhost:3000' : // CORS 프록시 사용
+        `https://${window.location.hostname}`),
     headers: {
         'Content-Type': 'application/json'
     },
